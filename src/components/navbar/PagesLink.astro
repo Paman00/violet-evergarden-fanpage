@@ -1,0 +1,12 @@
+---
+interface Props {
+    url: string;
+    pageName: string;
+}
+const { url, pageName } = Astro.props;
+---
+
+<li
+    class="w-full cursor-pointer py-1 border-b border-golden font-normal transition md:py-0 hover:text-zinc-200 md:border-none">
+    <a href={url}>{pageName}</a>
+</li>

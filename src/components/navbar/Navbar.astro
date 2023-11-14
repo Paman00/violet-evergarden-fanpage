@@ -1,0 +1,27 @@
+---
+import ButtonHiddenNav from './ButtonHiddenNav.astro';
+import PagesLink from './PagesLink.astro';
+
+const pages = [
+    { pageName: 'Inicio', url: '/' },
+    { pageName: 'Personajes', url: '#' },
+    { pageName: 'Ficha Técnica', url: '#' },
+    { pageName: 'Te puede interesar', url: '#' },
+];
+---
+
+<nav
+    class="relative m-auto flex h-[71px] w-full flex-col items-center justify-center border-x border-y-2 border-golden bg-black before:absolute before:left-0 before:top-0 before:h-[68px] before:w-[110px] before:bg-left-header before:content-[''] after:absolute after:right-0 after:top-0 after:h-[68px] after:w-[110px] after:bg-right-header after:content-['']">
+    <ButtonHiddenNav />
+
+    <ul
+        id="navBarUl"
+        class="absolute top-full mt-[1px] hidden w-5/6 grid-flow-row border-x-2 border-golden bg-black text-center text-golden md:top-auto md:grid md:grid-flow-col md:border-none">
+        <!-- + `md:grid-cols-${pages.length}`}  -->
+        {
+            pages.map(page => (
+                <PagesLink pageName={page.pageName} url={page.url} />
+            ))
+        }
+    </ul>
+</nav>
