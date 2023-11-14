@@ -1,0 +1,19 @@
+{
+    "tailwindConfig": "./tailwind.config.mjs",
+
+    "tabWidth": 4,
+    "singleQuote": true,
+    "trailingComma": "all",
+    "bracketSameLine": true,
+    "arrowParens": "avoid",
+    "astroAllowShorthand": true,
+    "overrides": [
+        {
+            "files": "*.astro",
+            "options": {
+                "parser": "astro"
+            }
+        }
+    ],
+    "plugins": ["prettier-plugin-astro", "prettier-plugin-tailwindcss"]
+}
