@@ -1,13 +1,13 @@
 /** @type {import('tailwindcss').Config} */
 
-const contentHeight = "75vh";
+const contentHeight = "44vh";
 
 export default {
 	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
 	theme: {
 		extend: {
 			fontFamily: {
-				'roboto': ['Roboto Slab', 'serif'],
+				'EBGaramond': ['EB Garamond', 'serif'], 
 			},
 			backgroundImage: {
 				'left-top-header': "url('/frameTopLeft.png')",
