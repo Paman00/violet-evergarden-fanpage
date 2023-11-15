@@ -1,0 +1,13 @@
+---
+import UnderlineTitle from "../icons/UnderlineTitle.astro";
+const props = Astro.props;
+---
+
+<div class="w-4/5 m-auto pb-6 md:py-12">
+    <h2 class:list={["text-center text-3xl md:text-5xl tracking-wide md:tracking-wider pb-2 w-full", props.class]} >
+        <slot>
+            This is a default slot
+        </slot>
+    </h2>
+    <UnderlineTitle class="h-auto w-3/5 md:w-full max-w-[13rem] m-auto text-golden " />
+</div>
