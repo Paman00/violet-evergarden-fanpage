@@ -1,4 +1,7 @@
 /** @type {import('tailwindcss').Config} */
+
+const contentHeight = "75vh";
+
 export default {
 	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
 	theme: {
@@ -16,8 +19,14 @@ export default {
 				'golden': "#b4832f",
 			},
 			spacing: {
-				'content-heigh': "75vh",
-			}
+				'content-height': contentHeight,
+			},
+			minHeight: {
+				'content-height': contentHeight,
+			},
+			maxHeight: {
+				'content-height': contentHeight,
+			},
 		},
 	},
 	plugins: [],
