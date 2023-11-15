@@ -1,14 +1,16 @@
 ---
-
+import { ViewTransitions } from 'astro:transitions';
 ---
 
-<header class="h-60 w-full overflow-hidden bg-sky-900 md:h-80 2xl:h-[75vh]">
+<ViewTransitions />
+<header
+    class="2xl:h-content-heigh h-60 w-full overflow-hidden bg-sky-900 md:h-80">
     <div
-        class="absolute z-0 h-60 w-full overflow-hidden bg-gradient-to-r from-slate-900 via-transparent to-slate-900 md:h-80 2xl:h-[75vh]">
+        class="2xl:h-content-heigh absolute z-0 h-60 w-full overflow-hidden bg-gradient-to-r from-slate-900 via-transparent to-slate-900 md:h-80">
     </div>
-    <div class="h-60 md:h-80 2xl:h-[75vh]">
+    <div class="2xl:h-content-heigh h-60 md:h-80">
         <img
-            class="z-10 m-auto w-full max-w-[1000px] brightness-75 filter md:w-1/2"
+            class="z-10 m-auto w-full brightness-75 filter md:w-1/2"
             src="/header_img_violet.png"
             alt="Violet Evergarden Running"
         />

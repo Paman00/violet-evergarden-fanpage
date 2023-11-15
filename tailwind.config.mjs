@@ -7,12 +7,17 @@ export default {
 				'roboto': ['Roboto Slab', 'serif'],
 			},
 			backgroundImage: {
-				'left-header': "url('/frameLeft.png')",
-				'right-header': "url('/frameRight.png')",
+				'left-top-header': "url('/frameTopLeft.png')",
+				'right-top-header': "url('/frameTopRight.png')",
+				'left-bottom-header': "url('/frameBottomLeft.png')",
+				'right-bottom-header': "url('/frameBottomRight.png')",
 			},
 			colors: {
 				'golden': "#b4832f",
 			},
+			spacing: {
+				'content-heigh': "75vh",
+			}
 		},
 	},
 	plugins: [],
