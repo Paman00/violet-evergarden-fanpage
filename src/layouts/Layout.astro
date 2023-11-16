@@ -17,16 +17,21 @@ const { title } = Astro.props;
         <meta name="description" content="Astro description" />
         <meta name="viewport" content="width=device-width" />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&display=swap"
+            rel="stylesheet"
+        />
         <meta name="generator" content={Astro.generator} />
         <title>{title}</title>
     </head>
-    <body class="min-h-full max-w-full bg-zinc-200 font-EBGaramond text-xl lg:text-2xl ">
+    <body
+        class="min-h-full max-w-full bg-zinc-200 font-EBGaramond text-xl lg:text-2xl">
         <Header />
         <Navbar />
-        <main class="h-auto w-full after:clear-both">
+        <main
+            class="h-auto min-h-[66vh] w-full after:clear-both md:min-h-content-height">
             <slot />
         </main>
         <Footer />

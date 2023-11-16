@@ -6,14 +6,28 @@ import Title from '../components/Title.astro';
 ---
 
 <Layout title="Inicio">
-    <section class="p-5">
+    <section class="p-5 md:px-10 md:py-20">
         <Title>Violet Evergarden</Title>
-        <div class="m-auto w-4/5 md:w-3/5 max-w-[1887px] md:rounded rounded-sm overflow-hidden">
+        <div
+            class="m-auto max-w-[1887px] overflow-hidden rounded-sm pb-4 md:w-3/5 md:rounded">
             <Image
                 src={violetWallpaper}
                 alt="Element Hero of Violet Evergarden seated with eyes closed"
                 class="w-full"
             />
+        </div> 
+        <div class="m-auto space-y-5 py-5">
+            <p>
+                En medio de los estragos de la guerra, <span class="font-medium">Violet Evergarden</span>, una joven aparentemente carente de emociones, encuentra su propósito al buscar el significado en las palabras que le dirigen las personas cercanas a ella. Su labor postbélica la lleva a redactar cartas conmovedoras que abarcan desde mensajes a un hermano sobreviviente hasta relatos de amor y despedidas a aquellos que parten.
+            </p>
+
+            <p>
+                Estas cartas, impregnadas de emociones diversas, graban el amor en el corazón de <span class="font-medium">Violet</span>, transformando su existencia aparentemente desprovista de sentimientos. <span class="italic font-medium">Violet Evergarden</span>, obra galardonada en los <span class="font-medium">Kyoto Animation Awards</span>, cobra vida en la animación dirigida por <span class="font-medium">Taichi Ishidate</span> y compuesta por <span class="font-medium">Reiko Yoshida</span>, con la destacada contribución de <span class="font-medium">Akiko Takase</span> en el diseño de personajes y dirección de animación.
+            </p>
+
+            <p>
+                <span class="font-medium">Kyoto Animation</span> da nueva vida a la rica visión del mundo de la película y a los sutiles matices de los personajes, creando una experiencia única y conmovedora que captura la esencia de la historia de <span class="font-medium">Violet Evergarden</span>.
+            </p>
         </div>
     </section>
 </Layout>
