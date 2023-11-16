@@ -1,0 +1,25 @@
+---
+import Layout from '../layouts/Layout.astro';
+import CharacterCard from '../components/CharacterCard.astro';
+
+import characters from '../data/characters.json';
+import Title from '../components/Title.astro';
+---
+
+<Layout title="Personajes">
+    <section class="p-5 md:px-10 md:py-20">
+        <Title>Personajes</Title>
+        <div class="after:clear-both after:table after:content-['']">
+            {
+                characters.map(character => (
+                    <CharacterCard
+                        id={character.id}
+                        name={character.name}
+                        description={character.description}
+                        img={character.img}
+                    />
+                ))
+            }
+        </div>
+    </section>
+</Layout>
