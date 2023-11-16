@@ -1,0 +1,40 @@
+---
+export interface Props {
+    id: string;
+    name: string;
+    img: string;
+    description: string[];
+}
+
+const { id, name, img, description } = Astro.props;
+---
+
+<div
+    class="group m-auto mb-8 mt-2 w-full max-w-sm overflow-hidden rounded-sm bg-white last:mb-0 hover:cursor-pointer md:max-w-4xl">
+    <h3
+        class="bg-golden-light py-1 text-center font-normal tracking-wide text-white">
+        {name}
+    </h3>
+    <div class="h-full p-4 md:h-[416px]">
+        <div
+            class="w-full overflow-hidden rounded-sm group-odd:float-left group-even:float-right md:h-96 md:w-1/2">
+            <img
+                src={img}
+                alt={name}
+                class="h-full w-full scale-100 object-cover duration-200 ease-in group-hover:scale-105"
+            />
+        </div>
+
+        <div
+            class="h-full pt-4 group-odd:float-right group-even:float-left md:w-1/2 md:pt-0 group-odd:md:pl-4 group-even:md:pr-4">
+            <p>
+                {
+                    description.map(content => (
+                        <font class="inline-block">{content}</font>
+                    ))
+                }
+            </p>
+        </div>
+        <div class="clear-both"></div>
+    </div>
+</div>
