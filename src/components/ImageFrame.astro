@@ -1,0 +1,64 @@
+---
+import decoTopLeft from '../images/decoTopLeft.png';
+import decoTopRight from '../images/decoTopRight.png';
+import decoBottomLeft from '../images/decoBottomLeft.png';
+import decoBottomRight from '../images/decoBottomRight.png';
+
+const srcDecoTopLeft = `url('${decoTopLeft.src}')`;
+const srcDecoTopRight = `url('${decoTopRight.src}')`;
+const srcDecoBottomLeft = `url('${decoBottomLeft.src}')`;
+const srcDecoBottomRight = `url('${decoBottomRight.src}')`;
+
+const decorationClassList = "before:h-7 before:w-7 after:h-7 after:w-7 md:before:h-10 md:before:w-10 md:after:h-10 md:after:w-10 xl:before:h-14 xl:before:w-14 xl:after:h-14 xl:after:w-14 ";
+
+const { ...rest } = Astro.props;
+---
+
+<div
+    class="relative h-full w-full overflow-hidden rounded-sm border border-golden-light shadow md:rounded"
+    {...rest}>
+    <div class={decorationClassList + 'left-top-decoration right-top-decoration'}></div>
+    <div class={decorationClassList + 'left-bottom-decoration right-bottom-decoration'}></div>
+    <div class="absolute inset-0 m-4 border-2 border-golden-light md:m-6 xl:m-8"></div>
+    <div class="absolute inset-0 m-5 border border-golden-light md:m-7 xl:m-9"></div>
+    <slot />
+</div>
+
+<style
+    define:vars={{
+        srcDecoTopLeft,
+        srcDecoTopRight,
+        srcDecoBottomLeft,
+        srcDecoBottomRight,
+    }}
+>
+    .left-top-decoration::before,
+    .right-top-decoration::after,
+    .left-bottom-decoration::before,
+    .right-bottom-decoration::after {
+        content: '';
+        background-repeat: no-repeat;
+        background-size: contain;
+        position: absolute;
+    }
+    .left-top-decoration::before {
+        background-image: var(--srcDecoTopLeft);
+        left: 0;
+        top: 0;
+    }
+    .right-top-decoration::after {
+        background-image: var(--srcDecoTopRight);
+        right: 0;
+        top: 0;
+    }
+    .left-bottom-decoration::before {
+        background-image: var(--srcDecoBottomLeft);
+        left: 0;
+        bottom: 0;
+    }
+    .right-bottom-decoration::after {
+        background-image: var(--srcDecoBottomRight);
+        right: 0;
+        bottom: 0;
+    }
+</style>
