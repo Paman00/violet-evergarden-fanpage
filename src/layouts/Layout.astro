@@ -14,12 +14,39 @@ const { title } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en" transition:animate={fade({ duration: '0.1s' })}>
+<html lang="es" transition:animate={fade({ duration: '0.1s' })}>
     <head>
         <meta charset="UTF-8" />
         <meta name="description" content="Astro description" />
         <meta name="viewport" content="width=device-width" />
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="/favicons/apple-touch-icon.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="16x16"
+            href="/favicons/favicon-16x16.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="/favicons/favicon-32x32.png"
+        />
+        <link
+			rel="icon"
+			type="image/png"
+			sizes="192x192"
+			href="/favicons/favicon-192x192.png"
+		/>
+        <link
+            rel="shortcut icon"
+            type="image/x-icon"
+            href="/favicons/favicon.ico"
+        />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
@@ -31,7 +58,7 @@ const { title } = Astro.props;
         <title>{title}</title>
     </head>
     <body
-        class="bg-beige min-h-full max-w-full font-EBGaramond text-xl lg:text-2xl">
+        class="min-h-full max-w-full bg-beige font-EBGaramond text-xl lg:text-2xl">
         <Header />
         <Navbar />
         <main

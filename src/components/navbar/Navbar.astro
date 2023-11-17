@@ -17,7 +17,7 @@ const pages = [
 
     <ul
         id="navBarUl"
-        class="absolute top-full mt-[1px] hidden w-11/12 grid-flow-row border-2 border-t-0 border-golden bg-black text-center text-golden md:top-auto md:grid md:grid-flow-col md:border-none md:bg-transparent">
+        class="absolute transition ease-in-out duration-200 top-full mt-[1px] hidden w-11/12 grid-flow-row border-2 border-t-0 border-golden bg-black text-center text-golden md:top-auto md:grid md:grid-flow-col md:border-none md:bg-transparent">
         {
             pages.map(page => (
                 <PagesLink url={page.url}>{page.pageName}</PagesLink>
