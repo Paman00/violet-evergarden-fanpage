@@ -1,0 +1,7 @@
+---
+const { ...rest } = Astro.props;
+---
+
+<section class="w-full h-full px-5 py-8 md:px-10 md:py-16" {...rest}>
+    <slot />
+</section>

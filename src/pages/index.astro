@@ -1,13 +1,15 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { Image } from 'astro:assets';
-import violetWallpaper from '../images/violet-evergarden-hero.jpg';
+import Section from '../components/Section.astro';
 import Title from '../components/Title.astro';
 import ImageFrame from '../components/ImageFrame.astro';
+import { Image } from 'astro:assets';
+
+import violetWallpaper from '../images/violet-evergarden-hero.jpg';
 ---
 
 <Layout title="Inicio">
-    <section class="px-5 py-8 md:px-10 md:py-16">
+    <Section>
         <Title>Violet Evergarden</Title>
         <div class="m-auto overflow-hidden pb-4 lg:w-3/5">
             <div class="m-auto mb-5 max-w-[1887px] md:w-11/12">
@@ -59,5 +61,5 @@ import ImageFrame from '../components/ImageFrame.astro';
                 </p>
             </div>
         </div>
-    </section>
+    </Section>
 </Layout>
