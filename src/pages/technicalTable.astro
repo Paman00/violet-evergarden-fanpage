@@ -1,0 +1,15 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Section from "../components/Section.astro";
+import Title from "../components/Title.astro";
+import CharactersTable from "../components/CharactersTable.astro";
+---
+
+<Layout title="Ficha Técnica">
+    <Section>
+        <Title>Ficha Técnica</Title>
+        <div class="w-[91,666%] max-w-5xl overflow-auto m-auto bg-neutral-100 p-1">
+            <CharactersTable />
+        </div>
+    </Section>
+</Layout>
