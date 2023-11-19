@@ -13,15 +13,15 @@ interface Props {
 const props = Astro.props;
 ---
 
-<tr>
+<tr class:list={[props.class]}>
     <td class="cell">{props.name}</td>
     <td class="cell text-sm">{props.japaneseName}</td>
     {
         props.serie?.map(s => (
-            <td class="cell">{s}</td>
+            <td class="cell cellLower">{s}</td>
         ))
     }
-    <td class="cell">{props.height/100}m</td>
+    <td class="cell cellLower">{props.height/100}m</td>
     {
         Object.values(props.casts).map(cast => (
             <td class="cell text-sm">

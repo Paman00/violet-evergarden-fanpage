@@ -3,13 +3,58 @@ import Layout from "../layouts/Layout.astro";
 import Section from "../components/Section.astro";
 import Title from "../components/Title.astro";
 import CharactersTable from "../components/CharactersTable.astro";
+
+import tailwindConfig from "../../tailwind.config.mjs";
+
+const goldenColor = tailwindConfig.theme.extend.colors.golden.DEFAULT;
+const goldenLightColor = tailwindConfig.theme.extend.colors.golden.light;
 ---
 
 <Layout title="Ficha Técnica">
     <Section>
         <Title>Ficha Técnica</Title>
-        <div class="w-[91,666%] max-w-5xl overflow-auto m-auto bg-neutral-100 p-1">
+        <p class="text-center text-base mb-2 max-w-xl m-auto">Información acerca de los personajes de Violet Evergarden, sus participaciones en cada una de las series y los actores de doblaje que los interpretan en los formatos digitales (series y películas).</p>
+        <div class="scrollbar w-[91,666%] max-w-5xl overflow-auto m-auto p-1">
             <CharactersTable />
         </div>
     </Section>
 </Layout>
+
+<style define:vars={{ color: goldenColor, lightColor: goldenLightColor }}>
+    .scrollbar {
+
+    }
+    .scrollbar::-webkit-scrollbar {
+        height: 7px;
+    }
+
+    .scrollbar::-webkit-scrollbar-thumb {
+        background: var(--lightColor);
+        border-radius: 4px;
+    }
+
+    .scrollbar::-webkit-scrollbar-thumb:active {
+        background-color: var(--color);
+    }
+
+    .scrollbar::-webkit-scrollbar-thumb:hover {
+        display: block;
+        background-color: var(--color);
+        box-shadow: 0 0 2px 1px #00000033;
+    }
+
+    .scrollbar::-webkit-scrollbar-track {
+        background: #e1e1e1;
+        border-radius: 4px;
+    }
+
+    .scrollbar::-webkit-scrollbar-track:hover, 
+    .scrollbar::-webkit-scrollbar-track:active {
+        background: #d4d4d4;
+    }
+
+    .scrollbar:hover .scrollbar::-webkit-scrollbar-track,
+    .scrollbar:scope .scrollbar::-webkit-scrollbar-track {
+        display: block;
+    }
+</style>

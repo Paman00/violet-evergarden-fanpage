@@ -7,63 +7,134 @@ const { ...rest } = Astro.props;
 
 import tailwindConfig from '../../tailwind.config.mjs';
 const goldenColor = tailwindConfig.theme.extend.colors.golden.DEFAULT;
+const goldenLightColor = tailwindConfig.theme.extend.colors.golden.light;
 ---
 
-<table
-    class="m-auto w-full border-collapse overflow-auto rounded-sm border-2 border-golden" {...rest}>
-    <thead>
-        <tr>
-            <th class="cell" rowspan="2">Nombre</th>
-            <th class="cell" rowspan="2">Nombre en Japonés</th>
-            <th class="cell" rowspan="1" colspan={series.length}>Presente en</th
-            >
-            <th class="cell" rowspan="2">Altura</th>
-            <th class="cell" colspan={languages.length}>Doblaje</th>
-        </tr>
-        <tr>
-            {
-                series.map(serie => (
-                    <th class="cell text-sm">
-                        <a href={serie.website} target="_blank">
-                            {serie.name === 'Violet Evergarden'
-                                ? `${serie.name} (${serie.type})`
-                                : serie.name}{' '}
-                        </a>
-                    </th>
-                ))
-            }
-            {
-                languages.map(language => (
-                    <th class="cell text-sm">
-                        {' '}
-                        {language == 'japanese' ? 'Japonés' : 'Inglés'}{' '}
-                    </th>
-                ))
-            }
-        </tr>
-    </thead>
-    <tbody>
-        {
-            characters.map(character => (
-                <CharacterRow
-                    class=""
-                    name={character.name}
-                    japaneseName={character.japaneseName}
-                    casts={character.cast}
-                    height={character.height}
-                    serie={series.map(serie =>
-                        character.seriesId.includes(serie.id) ? '✓' : ' ',
-                    )}
-                />
-            ))
-        }
-    </tbody>
-</table>
+<div class="bg-white p-2 border-golden border w-min shadow-sm">
+    <div class="border-golden border p-1 text-base w-min">
+        <table
+            class="m-auto border-collapse overflow-auto rounded-sm border-2 border-golden table-fixed" {...rest}>
+            <thead>
+                <tr class="row rowTitle">
+                    <th class="cell" rowspan="2">Nombre</th>
+                    <th class="cell" rowspan="2">Nombre en Japonés</th>
+                    <th class="cell cellLower" rowspan="1" colspan={series.length}>Presente en</th
+                    >
+                    <th class="cell cellLower" rowspan="2">Altura</th>
+                    <th class="cell" colspan={languages.length}>Doblaje</th>
+                </tr>
+                <tr class="row rowTitle">
+                    {
+                        series.map(serie => (
+                            <th class="cell cellLower text-sm">
+                                <a href={serie.website} target="_blank">
+                                    {serie.name === 'Violet Evergarden'
+                                        ? `${serie.name} (${serie.type})`
+                                        : serie.name}{' '}
+                                </a>
+                            </th>
+                        ))
+                    }
+                    {
+                        languages.map(language => (
+                            <th class="cell text-sm">
+                                {' '}
+                                {language == 'japanese' ? 'Japonés' : 'Inglés'}{' '}
+                            </th>
+                        ))
+                    }
+                </tr>
+            </thead>
+            <tbody>
+                {
+                    characters.map(character => (
+                        <CharacterRow
+                            class="row"
+                            name={character.name}
+                            japaneseName={character.japaneseName}
+                            casts={character.cast}
+                            height={character.height}
+                            serie={series.map(serie =>
+                                character.seriesId.includes(serie.id) ? '✓' : ' ',
+                            )}
+                        />
+                    ))
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
 
-<style is:global define:vars={{ color: goldenColor }}>
+<style is:global define:vars={{ color: goldenColor, lightColor: goldenLightColor }}>
+    .row {
+        height: 44px;
+        max-height: 44px;
+    }
+    .row:nth-child(even) {
+        background-color: #f9f9f9;
+    }
     .cell {
         padding: 0.5rem;
         border: 1px solid var(--color);
         text-align: center;
+        white-space: nowrap;
+        min-width: 160px;
+        max-width: 160px;
+        width: 160px;
+        overflow: hidden;
+    }
+    .cell * {
+        transition: all 0.3s ease-in-out;
+    }
+    .cell a {
+        color: #2b2b2b;
+    }
+    .cellLower {
+        min-width: 0px !important;
+        width: 120px;
+        max-width: 120px;
+    }
+
+    .cell::-webkit-scrollbar {
+        height: 5px;
+    }
+
+    .cell::-webkit-scrollbar-thumb {
+        background: var(--lightColor);
+        border-radius: 4px;
+    }
+
+    .cell::-webkit-scrollbar-thumb:active {
+        background-color: var(--color);
+    }
+
+    .cell::-webkit-scrollbar-thumb:hover {
+        display: block;
+        background-color: var(--color);
+    }
+
+    .cell::-webkit-scrollbar-track {
+        background: #e1e1e1;
+        border-radius: 4px;
+    }
+
+    .cell::-webkit-scrollbar-track:hover, 
+    .cell::-webkit-scrollbar-track:active {
+        background: #d4d4d4;
+    }
+
+    .cell:hover .cell::-webkit-scrollbar-track,
+    .cell:scope .cell::-webkit-scrollbar-track {
+        display: block;
+    }
+
+    .cell:hover,
+    .cell:scope {
+        overflow: auto;
+        text-overflow: clip;
+    }
+    .cell:hover a,
+    .cell:scope a{
+        color: var(--color);
     }
 </style>
