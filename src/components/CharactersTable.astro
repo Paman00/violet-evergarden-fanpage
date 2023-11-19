@@ -1,0 +1,69 @@
+---
+import CharacterRow from './CharacterRow.astro';
+
+import { characters, series, languages } from '../data/data.mjs';
+
+const { ...rest } = Astro.props;
+
+import tailwindConfig from '../../tailwind.config.mjs';
+const goldenColor = tailwindConfig.theme.extend.colors.golden.DEFAULT;
+---
+
+<table
+    class="m-auto w-full border-collapse overflow-auto rounded-sm border-2 border-golden" {...rest}>
+    <thead>
+        <tr>
+            <th class="cell" rowspan="2">Nombre</th>
+            <th class="cell" rowspan="2">Nombre en Japonés</th>
+            <th class="cell" rowspan="1" colspan={series.length}>Presente en</th
+            >
+            <th class="cell" rowspan="2">Altura</th>
+            <th class="cell" colspan={languages.length}>Doblaje</th>
+        </tr>
+        <tr>
+            {
+                series.map(serie => (
+                    <th class="cell text-sm">
+                        <a href={serie.website} target="_blank">
+                            {serie.name === 'Violet Evergarden'
+                                ? `${serie.name} (${serie.type})`
+                                : serie.name}{' '}
+                        </a>
+                    </th>
+                ))
+            }
+            {
+                languages.map(language => (
+                    <th class="cell text-sm">
+                        {' '}
+                        {language == 'japanese' ? 'Japonés' : 'Inglés'}{' '}
+                    </th>
+                ))
+            }
+        </tr>
+    </thead>
+    <tbody>
+        {
+            characters.map(character => (
+                <CharacterRow
+                    class=""
+                    name={character.name}
+                    japaneseName={character.japaneseName}
+                    casts={character.cast}
+                    height={character.height}
+                    serie={series.map(serie =>
+                        character.seriesId.includes(serie.id) ? '✓' : ' ',
+                    )}
+                />
+            ))
+        }
+    </tbody>
+</table>
+
+<style is:global define:vars={{ color: goldenColor }}>
+    .cell {
+        padding: 0.5rem;
+        border: 1px solid var(--color);
+        text-align: center;
+    }
+</style>
