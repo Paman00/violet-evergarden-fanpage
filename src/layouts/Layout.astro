@@ -5,10 +5,13 @@ import Footer from '../components/Footer.astro';
 
 import { fade } from 'astro:transitions';
 import { ViewTransitions } from 'astro:transitions';
+import tailwindConfig from '../../tailwind.config.mjs';
 
 interface Props {
     title: string;
 }
+
+const { theme: { extend: { colors } } } = tailwindConfig;
 
 const { title } = Astro.props;
 ---
@@ -89,3 +92,10 @@ const { title } = Astro.props;
         </script>
     </body>
 </html>
+
+<style define:vars={{ golden: colors.golden.DEFAULT, lightGolden: colors.golden.light }} is:global>
+    :root {
+        --golden: var(--golden);
+        --lightGolden: var(--lightGolden);
+    }
+</style>

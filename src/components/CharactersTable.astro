@@ -10,7 +10,7 @@ const goldenColor = tailwindConfig.theme.extend.colors.golden.DEFAULT;
 const goldenLightColor = tailwindConfig.theme.extend.colors.golden.light;
 ---
 
-<div class="bg-white p-2 border-golden border w-min shadow-sm">
+<div class="bg-white p-2 border-golden border w-min shadow-sm m-auto">
     <div class="border-golden border p-1 text-base w-min">
         <table
             class="m-auto border-collapse overflow-auto rounded-sm border-2 border-golden table-fixed" {...rest}>
@@ -65,7 +65,7 @@ const goldenLightColor = tailwindConfig.theme.extend.colors.golden.light;
     </div>
 </div>
 
-<style is:global define:vars={{ color: goldenColor, lightColor: goldenLightColor }}>
+<style is:global>
     .row {
         height: 44px;
         max-height: 44px;
@@ -75,7 +75,7 @@ const goldenLightColor = tailwindConfig.theme.extend.colors.golden.light;
     }
     .cell {
         padding: 0.5rem;
-        border: 1px solid var(--color);
+        border: 1px solid var(--golden);
         text-align: center;
         white-space: nowrap;
         min-width: 160px;
@@ -90,9 +90,9 @@ const goldenLightColor = tailwindConfig.theme.extend.colors.golden.light;
         color: #2b2b2b;
     }
     .cellLower {
-        min-width: 0px !important;
-        width: 120px;
-        max-width: 120px;
+        min-width: 140px;
+        width: 140px;
+        max-width: 140px;
     }
 
     .cell::-webkit-scrollbar {
@@ -100,17 +100,17 @@ const goldenLightColor = tailwindConfig.theme.extend.colors.golden.light;
     }
 
     .cell::-webkit-scrollbar-thumb {
-        background: var(--lightColor);
+        background: var(--lightGolden);
         border-radius: 4px;
     }
 
     .cell::-webkit-scrollbar-thumb:active {
-        background-color: var(--color);
+        background-color: var(--golden);
     }
 
     .cell::-webkit-scrollbar-thumb:hover {
         display: block;
-        background-color: var(--color);
+        background-color: var(--golden);
     }
 
     .cell::-webkit-scrollbar-track {
@@ -135,6 +135,6 @@ const goldenLightColor = tailwindConfig.theme.extend.colors.golden.light;
     }
     .cell:hover a,
     .cell:scope a{
-        color: var(--color);
+        color: var(--golden);
     }
 </style>
