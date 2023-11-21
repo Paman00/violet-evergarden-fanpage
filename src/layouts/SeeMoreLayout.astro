@@ -1,0 +1,61 @@
+---
+import Layout from "./Layout.astro";
+import Section from "../components/Section.astro";
+import Title from "../components/Title.astro";
+import SeeMoreNav from "../components/SeeMoreNav.astro";
+
+import violetWallpaper from "../images/VioletWallpaper.jpg";
+
+const { frontmatter } = Astro.props; 
+---
+
+<Layout title={`Webs: ${frontmatter.title}`}>
+    <Section>
+        <Title>Webs de Interés</Title>
+        <div class="m-auto max-w-xl min-h-screen mt-14">
+            <SeeMoreNav />
+            <div class="overflow-hidden w-full h-auto rounded my-4">
+                <img class="w-full max-h-none" src={frontmatter.image.src != "" ? frontmatter.image.src : violetWallpaper.src} alt={frontmatter.image.alt != "" ? frontmatter.image.alt : "Violet Evergarden"}>
+            </div>
+            <div id="content" class="my-4">
+                <h2 class="text-center text-2xl font-medium text-golden-light m-3">{frontmatter.title}</h2>
+                <div>
+                    <slot />
+                </div>
+            </div>
+        </div>
+    </Section>
+</Layout>
+
+<style is:inline>
+    #content h3 {
+        background-color: var(--lightGolden);
+        text-align: center;
+        color: white;
+    } 
+    #content p, #content li, #content ul {
+        margin: 10px;
+    }
+    #content a {
+        color: var(--lightGolden);
+    }
+    #content li::before {
+        content: '■';
+        padding: 0 10px 0 0;
+        color: var(--lightGolden);
+        width: 1rem;
+    }
+    #content a::after {
+        content: '🔗';
+    }
+    #content li a:hover {
+        text-decoration: underline;
+    } 
+    #content img {
+        margin: 10px auto;
+        width: auto;
+        height: 100%;
+        max-height: 200px;
+        object-fit: contain;
+    }
+</style>
