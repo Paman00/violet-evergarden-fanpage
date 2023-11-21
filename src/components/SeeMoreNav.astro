@@ -3,8 +3,8 @@ const { ...rest } = Astro.props;
 ---
 
 <div id="nav-see-more" class="text-center" {...rest}>
-    <ul class="grid grid-cols-4 text-xl gap-2">
-        <li><a href="/see-more/#nav-see-more">Paginas oficiales</a></li>
+    <ul class="grid md:grid-cols-4 text-xl md:gap-2 m-auto">
+        <li><a href="/see-more/#nav-see-more">Oficial</a></li>
         <li><a href="/see-more/sources/#nav-see-more">Referencias</a></li>
         <li><a href="/see-more/music/#nav-see-more">Música</a></li>
         <li><a href="/see-more/watch/#nav-see-more">Ver en</a></li>
@@ -24,7 +24,7 @@ const { ...rest } = Astro.props;
     li, li a {
         border-top: solid 1px var(--lightGolden);
         border-bottom: solid 1px var(--lightGolden);
-        margin-bottom: 1rem;
+        margin-bottom: 0.5rem;
     }
     li a {
         background-color: #f5f5dc;
