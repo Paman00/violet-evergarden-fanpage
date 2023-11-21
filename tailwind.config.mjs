@@ -22,6 +22,7 @@ export default {
                 },
                 beige: {
                     DEFAULT: '#efebd9',
+                    light: '#f5f5dc'
                 },
             },
             spacing: {
