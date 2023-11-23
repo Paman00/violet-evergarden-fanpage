@@ -12,12 +12,12 @@ const { frontmatter } = Astro.props;
 <Layout title={`Webs: ${frontmatter.title}`}>
     <Section>
         <Title>Webs de Interés</Title>
-        <div class="m-auto max-w-xl min-h-screen mt-14">
+        <div class="m-auto max-w-xl min-h-screen">
             <SeeMoreNav />
-            <div class="overflow-hidden w-full h-auto rounded my-4">
+            <div class="overflow-hidden w-full h-auto rounded my-4" transition:animate="slide">
                 <img class="w-full max-h-none" src={frontmatter.image.src != "" ? frontmatter.image.src : violetWallpaper.src} alt={frontmatter.image.alt != "" ? frontmatter.image.alt : "Violet Evergarden"}>
             </div>
-            <div id="content" class="my-4">
+            <div id="content" class="my-4" transition:animate="slide">
                 <h2 class="text-center text-2xl font-medium text-golden-light m-3">{frontmatter.title}</h2>
                 <div>
                     <slot />
@@ -33,20 +33,34 @@ const { frontmatter } = Astro.props;
         text-align: center;
         color: white;
     } 
+    #content h3:not(:first-child) {
+        margin-top: 33px;
+    }
     #content p, #content li, #content ul {
         margin: 10px;
     }
     #content a {
         color: var(--lightGolden);
     }
-    #content li::before {
+    #content ol {
+        list-style: upper-roman;
+    }
+    #content ol li {
+        margin-left: 45px;
+        padding-left: 5px;
+    }
+    #content ol li::marker {
+        color: var(--lightGolden);
+        font-weight: 500;
+    }
+    #content ul li::before {
         content: '■';
         padding: 0 10px 0 0;
         color: var(--lightGolden);
         width: 1rem;
     }
     #content a::after {
-        content: '🔗';
+        content: ' 🔗';
     }
     #content li a:hover {
         text-decoration: underline;
@@ -54,8 +68,7 @@ const { frontmatter } = Astro.props;
     #content img {
         margin: 10px auto;
         width: auto;
-        height: 100%;
-        max-height: 200px;
+        height: 150px;
         object-fit: contain;
     }
 </style>

@@ -3,11 +3,6 @@ import Layout from '../layouts/Layout.astro';
 import Section from '../components/Section.astro';
 import Title from '../components/Title.astro';
 import CharactersTable from '../components/CharactersTable.astro';
-
-import tailwindConfig from '../../tailwind.config.mjs';
-
-const goldenColor = tailwindConfig.theme.extend.colors.golden.DEFAULT;
-const goldenLightColor = tailwindConfig.theme.extend.colors.golden.light;
 ---
 
 <Layout title="Ficha Técnica">
@@ -23,10 +18,11 @@ const goldenLightColor = tailwindConfig.theme.extend.colors.golden.light;
         </div>
         <div class="m-auto max-w-5xl">
             <p class="m-auto text-right text-sm">
-                Fuentes en <a
-                    href="/see-more/#fuentes"
+                <a
+                    href="/see-more/sources/#navBar"
                     class="duration-200 ease-in-out hover:text-golden"
-                    >Ver más...</a>
+                    >Fuentes en Webs de Interés</a
+                >
             </p>
         </div>
     </Section>
