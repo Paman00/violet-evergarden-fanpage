@@ -18,7 +18,8 @@ const { frontmatter } = Astro.props;
                 <img class="w-full max-h-none" src={frontmatter.image.src != "" ? frontmatter.image.src : violetWallpaper.src} alt={frontmatter.image.alt != "" ? frontmatter.image.alt : "Violet Evergarden"}>
             </div>
             <div id="content" class="my-4" transition:animate="slide">
-                <h2 class="text-center text-2xl font-medium text-golden-light m-3">{frontmatter.title}</h2>
+                <h2 class="text-center text-2xl font-medium text-golden-light 
+                border-b border-golden">{frontmatter.title}</h2>
                 <div>
                     <slot />
                 </div>
@@ -37,7 +38,7 @@ const { frontmatter } = Astro.props;
         margin-top: 33px;
     }
     #content p, #content li, #content ul {
-        margin: 10px;
+        margin: 15px;
     }
     #content a {
         color: var(--lightGolden);
