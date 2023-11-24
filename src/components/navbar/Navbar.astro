@@ -8,11 +8,14 @@ const pages = [
     { pageName: 'Ficha Técnica', url: '/technical-table/#navBar' },
     { pageName: 'Te puede interesar', url: '/see-more/#navBar' },
 ];
+
+const { ...props } = Astro.props;
 ---
 
 <nav
     id="navBar"
-    class="relative z-20 m-auto flex h-[71px] w-full flex-col items-center justify-center border-x border-y-2 border-golden bg-black shadow before:absolute before:left-0 before:top-0 before:h-[68px] before:w-[110px] before:bg-left-top-header before:content-[''] after:absolute after:right-0 after:top-0 after:h-[68px] after:w-[110px] after:bg-right-top-header after:content-['']">
+    class="relative z-20 m-auto flex h-[71px] w-full flex-col items-center justify-center border-x border-y-2 border-golden bg-black shadow before:absolute before:left-0 before:top-0 before:h-[68px] before:w-[110px] before:bg-left-top-header before:content-[''] after:absolute after:right-0 after:top-0 after:h-[68px] after:w-[110px] after:bg-right-top-header after:content-['']"
+    {...props}>
     <ButtonHiddenNav />
 
     <ul

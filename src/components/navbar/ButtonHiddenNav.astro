@@ -1,8 +1,16 @@
-<button id="navBarBtn"
-    class="transition block h-8 w-8 rounded border-2 border-golden bg-transparent text-white md:hidden">
-    <div class="h-[2px] w-4/5 m-auto mb-1 bg-golden rounded-sm transition"></div>
-    <div class="h-[2px] w-4/5 m-auto mb-1 bg-golden rounded-sm transition"></div>
-    <div class="h-[2px] w-4/5 m-auto bg-golden rounded-sm transition"></div>
+---
+const { ...rest } = Astro.props;
+---
+
+<button
+    id="navBarBtn"
+    class="block h-8 w-8 rounded border-2 border-golden bg-transparent text-white transition md:hidden"
+    {...rest}>
+    <div class="m-auto mb-1 h-[2px] w-4/5 rounded-sm bg-golden transition">
+    </div>
+    <div class="m-auto mb-1 h-[2px] w-4/5 rounded-sm bg-golden transition">
+    </div>
+    <div class="m-auto h-[2px] w-4/5 rounded-sm bg-golden transition"></div>
 </button>
 
 <style>

@@ -2,14 +2,13 @@
 interface Props {
     url: string;
 }
-const { url } = Astro.props;
+const { url, ...rest } = Astro.props;
 ---
 
-<li>
+<li {...rest}>
     <a
-        class="block w-full cursor-pointer border-b border-golden py-3 font-normal transition hover:text-zinc-200 md:border-none md:py-0"
+        class="block w-full cursor-pointer border-b border-golden py-3 font-normal transition hover:text-beige-light md:border-none md:py-0"
         href={url}>
-            <slot />
-        </a
-    >
+        <slot />
+    </a>
 </li>
