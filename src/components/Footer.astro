@@ -1,7 +1,51 @@
 ---
-
+import Instagram from '../icons/Instagram.astro';
+import Netflix from '../icons/Netflix.astro';
+import Twitter from '../icons/Twitter.astro';
+import Youtube from '../icons/Youtube.astro';
 ---
 
 <footer
-    class="relative h-[140px] w-full border-x border-y-2 border-golden bg-black shadow before:absolute before:bottom-0 before:left-0 before:h-[68px] before:w-[110px] before:bg-left-bottom-header before:content-[''] after:absolute after:bottom-0 after:right-0 after:h-[68px] after:w-[110px] after:bg-right-bottom-header after:content-['']">
+    class="relative h-[100px] w-full border-x border-y-2 border-golden bg-black shadow before:absolute before:bottom-0 before:left-0 before:h-[68px] before:w-[110px] before:bg-left-bottom-header before:content-[''] after:absolute after:bottom-0 after:right-0 after:h-[68px] after:w-[110px] after:bg-right-bottom-header after:content-['']">
+    <div class="h-fit w-full overflow-hidden pt-4 text-golden">
+        <div class="m-auto h-auto w-max overflow-hidden">
+            <a
+                target="_blank"
+                class="float-left h-8 w-8 hover:text-[#1da1f2]"
+                href="https://twitter.com/Violet_Letter">
+                <Twitter />
+            </a>
+            <a
+                target="_blank"
+                class="float-left ml-2 h-8 w-8 hover:text-[#c32aa3]"
+                href="https://www.instagram.com/violetevergarden_movie/">
+                <Instagram />
+            </a>
+            <a
+                target="_blank"
+                class="float-left ml-2 h-8 w-8 hover:text-[#dc4e41]"
+                href="https://www.youtube.com/@KyoaniChannel">
+                <Youtube />
+            </a>
+            <a
+                target="_blank"
+                class="float-left ml-[3px] h-8 w-8 hover:text-[#e50914]"
+                href="https://www.netflix.com/us-es/title/80182123">
+                <Netflix />
+            </a>
+        </div>
+        <div class="mt-3">
+            <a
+                href="#"
+                class="block text-center text-sm font-normal text-golden-light hover:text-golden">
+                2023 - Miguel Ángel García Beltran
+            </a>
+        </div>
+    </div>
 </footer>
+
+<style>
+    a:hover {
+        transition: 200ms ease-in-out all;
+    }
+</style>

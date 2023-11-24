@@ -1,15 +1,16 @@
 ---
-const props = Astro.props;
+const { class: propsClass, ...rest } = Astro.props;
 ---
 
 <svg
     version="1.0"
     xmlns="http://www.w3.org/2000/svg"
-    class:list={["block  fill-current", props.class]}
+    class:list={['block fill-current', propsClass]}
     viewBox="0 290 1280 60"
     width="100%"
     height="100%"
-    preserveAspectRatio="xMidYMid meet">
+    preserveAspectRatio="xMidYMid meet"
+    {...rest}>
     <metadata>
         Created by potrace 1.15, written by Peter Selinger 2001-2017
     </metadata>
