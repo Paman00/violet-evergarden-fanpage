@@ -1,21 +1,21 @@
-# Proyecto con Astro: Violet Evergarden
+# Proyecto Violet Evergarden con Astro
 
-Este proyecto utiliza [Astro](https://astro.build "Web Page de Astro"), un generador de sitios estáticos. Astro renderiza el sitio como HTML en el servidor y envía solo HTML, CSS y el código JavaScript mínimo necesario al cliente. Lo que permite escribir componentes con HTML nativo, o usar React, Vue o Svelte en el mismo sitio, o incuso usar md o mdx, pues Astro renderizará el contenido a una versión estática del sitio.
+Este proyecto hace uso de [Astro](https://astro.build "Sitio web de Astro"), un generador de sitios estáticos que genera  únicamente el HTML, CSS y el código JavaScript mínimo necesario al cliente. Esto brinda la flexibilidad de escribir componentes con HTML nativo o emplear frameworks como React, Vue o Svelte en la misma aplicación o la misma pagina, e incluso integrar archivos .md o .mdx, ya que Astro se encarga de renderizar el contenido a una versión estática del sitio.
 
-## Particularidades
-La aplicación utiliza TailwindCSS para el diseño, y se basa en el diseño de [Violet Evergarden](https://tv.violet-evergarden.jp/ "Pagina oficial de Violet Evergarden en japón"). Con una paleta de colores basada en el diseño original, y con un diseño responsive.
+## Características Destacadas
 
-La aplicación tiene el fin de usar un sistema de rutas dinámicas en el futuro, lo que permitirá crear rutas para cada uno de los personajes de la serie de manera casi automática. Esto se logrará con el uso del archivo `data` y el uso de [`getStaticPaths`](https://docs.astro.build/es/reference/api-reference/#getstaticpaths "Documentación oficial de getStaticPaths") de Astro. 
+La aplicación se inspira en el diseño de [Violet Evergarden](https://tv.violet-evergarden.jp/ "Página oficial de Violet Evergarden en Japón"), utilizando TailwindCSS para el css, y una paleta de colores que se basa en los colores originales, sin dejar de ser responsive para aumentar la accesibilidad.
 
+En el futuro, la aplicación tiene como objetivo implementar un sistema de rutas dinámicas que permitirá la creación automática de rutas para cada uno de los personajes de la serie. Este objetivo se alcanzará mediante el uso del archivo `data` y la aplicación de [`getStaticPaths`](https://docs.astro.build/es/reference/api-reference/#getstaticpaths "Documentación oficial de getStaticPaths") de Astro.
 
 ## Violet Evergarden
 ### [Visualiza el sitio](https://paman00violetfanpage.netlify.app/ "Violet Evergarden Fanpage - Paman00")
 
-![Preview del sitio en mobile](./public/preview.png "Web Page de Violet Evergarden - Paman00")
+![Vista previa del sitio en dispositivos móviles](./public/preview.png "Sitio web de Violet Evergarden - Paman00")
 
-_(Deploy en Netlify)_
+_(Desplegado en Netlify)_
 
-## Estructura de carpetas actual del proyecto
+## Estructura Actual de Carpetas del Proyecto
 ```text
 ├───public
 │   └───favicons
@@ -35,17 +35,18 @@ _(Deploy en Netlify)_
 
 Para instalar el proyecto, sigue estos pasos:
 
-1. Clona el repositorio en tu máquina local usando `git clone https://github.com/Paman00/violet-evergarden-fanpage`.
+1. Clona el repositorio en tu máquina local con el comando `git clone https://github.com/Paman00/violet-evergarden-fanpage`.
 
-2. Navega al directorio del proyecto con `cd violet-evergarden-fanpage`.
+2. Navega al directorio del proyecto con el comando `cd violet-evergarden-fanpage`.
 
-3. Instala las dependencias con `yarn`.
+3. Instala las dependencias utilizando el comando `yarn`.
 
-Y listo!
+¡Listo!
 
-## Ejecución en modo desarrollo
+## Ejecución en Modo Desarrollo
 
-Para ejecutar el proyecto en modo desarrollo, usa el comando `yarn`. Esto iniciará un servidor de desarrollo en `http://localhost:4321` de forma predeterminada. 
+Para ejecutar el proyecto en modo desarrollo, utiliza el comando `yarn`. Esto iniciará un servidor de desarrollo en `http://localhost:4321` de forma predeterminada.
 
-## Sobre mi
-Conóceme más, en la biografía en la página **about-me** de la aplicación. [About me en Violet Evergarden](https://paman00violetfanpage.netlify.app/about-me/ "Violet Evergarden Fanpage - Paman00")
+## Acerca de Mí
+Descubre más sobre mí en la biografía de la página **about-me** de la aplicación. [Acerca de mí en Violet Evergarden](https://paman00violetfanpage.netlify.app/about-me/ "Violet Evergarden Fanpage - Paman00")
+```
