@@ -1,25 +1,40 @@
 ---
-import Layout from "./Layout.astro";
-import Section from "../components/Section.astro";
-import Title from "../components/Title.astro";
-import SeeMoreNav from "../components/SeeMoreNav.astro";
+import Layout from './Layout.astro';
+import Section from '../components/Section.astro';
+import Title from '../components/Title.astro';
+import SeeMoreNav from '../components/SeeMoreNav.astro';
 
-import violetWallpaper from "../images/VioletWallpaper.jpg";
+import violetWallpaper from '../images/VioletWallpaper.jpg';
 
-const { frontmatter } = Astro.props; 
+const { frontmatter } = Astro.props;
 ---
 
-<Layout title={`Webs: ${frontmatter.title}`}>
+<Layout
+    title={`Webs: ${frontmatter.title}`}
+    description="Explora una selección de webs de interés relacionadas con Violet Evergarden. Descubre más recursos y contenido sobre la serie.">
     <Section>
         <Title>Webs de Interés</Title>
-        <div class="m-auto max-w-xl min-h-screen">
+        <div class="m-auto min-h-screen max-w-xl">
             <SeeMoreNav />
-            <div class="overflow-hidden w-full h-auto rounded my-4" transition:animate="slide">
-                <img class="w-full max-h-none" src={frontmatter.image.src != "" ? frontmatter.image.src : violetWallpaper.src} alt={frontmatter.image.alt != "" ? frontmatter.image.alt : "Violet Evergarden"}>
+            <div
+                class="my-4 h-auto w-full overflow-hidden rounded"
+                transition:animate="slide">
+                <img
+                    class="max-h-none w-full"
+                    src={frontmatter.image.src != ''
+                        ? frontmatter.image.src
+                        : violetWallpaper.src}
+                    alt={frontmatter.image.alt != ''
+                        ? frontmatter.image.alt
+                        : 'Violet Evergarden'}
+                />
             </div>
             <div id="content" class="my-4" transition:animate="slide">
-                <h2 class="text-center text-2xl font-medium text-golden-light 
-                border-b border-golden">{frontmatter.title}</h2>
+                <h2
+                    class="border-b border-golden text-center text-2xl
+                font-medium text-golden-light">
+                    {frontmatter.title}
+                </h2>
                 <div>
                     <slot />
                 </div>
@@ -33,11 +48,13 @@ const { frontmatter } = Astro.props;
         background-color: var(--lightGolden);
         text-align: center;
         color: white;
-    } 
+    }
     #content h3:not(:first-child) {
         margin-top: 33px;
     }
-    #content p, #content li, #content ul {
+    #content p,
+    #content li,
+    #content ul {
         margin: 15px;
     }
     #content a {
@@ -65,7 +82,7 @@ const { frontmatter } = Astro.props;
     }
     #content li a:hover {
         text-decoration: underline;
-    } 
+    }
     #content img {
         margin: 10px auto;
         width: auto;
