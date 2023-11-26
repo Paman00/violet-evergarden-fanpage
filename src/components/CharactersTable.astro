@@ -5,9 +5,6 @@ import { characters, series, languages } from '../data/data.mjs';
 
 const { ...rest } = Astro.props;
 
-import tailwindConfig from '../../tailwind.config.mjs';
-const goldenColor = tailwindConfig.theme.extend.colors.golden.DEFAULT;
-const goldenLightColor = tailwindConfig.theme.extend.colors.golden.light;
 ---
 
 <div class="bg-white p-2 border-golden border w-min shadow-sm m-auto">
