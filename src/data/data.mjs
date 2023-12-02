@@ -65,6 +65,31 @@ const data = {
         },
         {
             id: '2',
+            name: 'Gilbert Bougainvillea',
+            japaneseName: 'ギルベルト・ブーゲンビリア',
+            img: gilbertImg.src,
+            description: [
+                'Nació en una familia aristocrática que ha existido durante generaciones y se convirtió en mayor del ejército.',
+                'Durante la guerra, conoció a la joven Violet y juntos lucharon contra el Ejército Imperial.',
+                'Para Violet era más importante que cualquier otra cosa.',
+            ],
+            height: 185,
+            cast: {
+                japanese: {
+                    id: '3',
+                    name: 'Daisuke Namikawa',
+                    link: 'https://www.behindthevoiceactors.com/Daisuke-Namikawa/',
+                },
+                english: {
+                    id: '4',
+                    name: 'Tony Azzolino',
+                    link: 'https://www.behindthevoiceactors.com/Tony-Azzolino/',
+                },
+            },
+            seriesId: ['1', '2', '4'],
+        },
+        {
+            id: '3',
             name: 'Claudia Hodings',
             japaneseName: 'クラウディア・ホッディングス',
             img: claudiaImg.src,
@@ -77,42 +102,17 @@ const data = {
             height: 192,
             cast: {
                 japanese: {
-                    id: '3',
+                    id: '5',
                     name: 'Takehito Koyasu',
                     link: 'https://www.behindthevoiceactors.com/Takehito-Koyasu/',
                 },
                 english: {
-                    id: '4',
+                    id: '6',
                     name: 'Kyle McCarley',
                     link: 'https://www.behindthevoiceactors.com/Kyle-McCarley/',
                 },
             },
             seriesId: ['1', '2', '3', '4'],
-        },
-        {
-            id: '3',
-            name: 'Gilbert Bougainvillea',
-            japaneseName: 'ギルベルト・ブーゲンビリア',
-            img: gilbertImg.src,
-            description: [
-                'Nació en una familia aristocrática que ha existido durante generaciones y se convirtió en mayor del ejército.',
-                'Durante la guerra, conoció a la joven Violet y juntos lucharon contra el Ejército Imperial.',
-                'Para Violet era más importante que cualquier otra cosa.',
-            ],
-            height: 185,
-            cast: {
-                japanese: {
-                    id: '5',
-                    name: 'Daisuke Namikawa',
-                    link: 'https://www.behindthevoiceactors.com/Daisuke-Namikawa/',
-                },
-                english: {
-                    id: '6',
-                    name: 'Tony Azzolino',
-                    link: 'https://www.behindthevoiceactors.com/Tony-Azzolino/',
-                },
-            },
-            seriesId: ['1', '2', '4'],
         },
         {
             id: '4',
