@@ -1,9 +1,9 @@
 ---
-layout: ../../layouts/SeeMoreLayout.astro
 title: 'Fuentes de información'
 description: 'Fuentes de información de distintos medios sobre Violet Evergarden'
+label: 'Referencias'
 image:
-    src: '/VioletWallpaper3.jpg'
+    src: './cover/sources.jpg'
     alt: 'Violet Evergarden in a river'
 ---
 

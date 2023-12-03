@@ -1,9 +1,9 @@
 ---
-layout: ../../layouts/SeeMoreLayout.astro
 title: 'Bandas Sonoras'
 description: 'Conoce la música de Violet Evergarden'
+label: 'Música'
 image:
-    src: '/VioletWallpaper2.jpg'
+    src: './cover/music.jpg'
     alt: 'Violet Evergarden wearing her uniform'
 ---
 

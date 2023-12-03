@@ -1,10 +1,11 @@
 ---
-layout: ../../layouts/SeeMoreLayout.astro
 title: 'Webs Oficiales de Violet Evergarden'
 description: 'Mira las webs oficiales de Violet Evergarden'
+label: 'Oficial'
+slug: 'official'
 image:
-    src: ''
-    alt: ''
+    src: './cover/official.jpg'
+    alt: 'Violet Evergarden seeing the city of Leiden'
 ---
 
 ### Mira las webs oficiales en Japón

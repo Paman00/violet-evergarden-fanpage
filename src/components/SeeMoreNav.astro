@@ -1,40 +1,39 @@
 ---
-const { ...rest } = Astro.props;
+import { getCollection } from 'astro:content';
+
+const allSeeMorePages = await getCollection('see-more');
+
+interface Props {
+    class?: string;
+}
+
+const { class: className, ...rest } = Astro.props;
+
+const columns = `md:grid-cols-4`;
 ---
 
-<div id="nav-see-more" class="text-center" {...rest}>
-    <ul class="grid md:grid-cols-4 text-xl md:gap-2 m-auto">
-        <li><a href="/see-more/#nav-see-more">Oficial</a></li>
+<div id="nav-see-more" class:list={['text-center', className]} {...rest}>
+    <ul class:list={['m-auto grid text-xl md:gap-2', columns]}>
+        {
+            allSeeMorePages.map(page => (
+                <li class="mt-2 cursor-pointer rounded border-y border-golden-light bg-white text-golden-light">
+                    <a
+                        class="hover:text- my-[3px] block border-y border-golden-light  bg-beige-light py-2 hover:bg-golden-light hover:text-white"
+                        href={`/see-more/${page.slug}/#nav-see-more`}>
+                        {page.data.label}
+                    </a>
+                </li>
+            ))
+        }
+        <!-- <li><a href="/see-more/#nav-see-more">Oficial</a></li>
         <li><a href="/see-more/sources/#nav-see-more">Referencias</a></li>
         <li><a href="/see-more/music/#nav-see-more">Música</a></li>
-        <li><a href="/see-more/watch/#nav-see-more">Donde ver</a></li>
+        <li><a href="/see-more/watch/#nav-see-more">Donde ver</a></li> -->
     </ul>
 </div>
 
 <style>
     * {
         transition: all 0.3s ease-in-out;
-    }
-    li {
-        border-radius: 4px;
-        cursor: pointer;
-        background-color: white;
-        color: var(--lightGolden);
-    }
-    li, li a {
-        border-top: solid 1px var(--lightGolden);
-        border-bottom: solid 1px var(--lightGolden);
-        margin-bottom: 0.5rem;
-    }
-    li a {
-        background-color: #f5f5dc;
-        display: block;
-        margin-top: 3px;
-        padding: 0.5rem 0;
-        margin-bottom: 3px;
-    }
-    li a:hover {
-        background-color: var(--lightGolden);
-        color: white;
     }
 </style>

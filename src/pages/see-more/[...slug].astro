@@ -1,0 +1,23 @@
+---
+import { getCollection } from 'astro:content';
+import SeeMoreLayout from '../../layouts/SeeMoreLayout.astro';
+
+export const getStaticPaths = async () => {
+    const seeMoreEntries = await getCollection('see-more');
+    return seeMoreEntries.map(entry => ({
+        params: {
+            slug: entry.slug,
+        },
+        props: {
+            entry,
+        },
+    }));
+};
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+---
+
+<SeeMoreLayout frontmatter={entry.data}>
+    <Content />
+</SeeMoreLayout>

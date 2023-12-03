@@ -3,8 +3,7 @@ import Layout from './Layout.astro';
 import Section from '../components/Section.astro';
 import Title from '../components/Title.astro';
 import SeeMoreNav from '../components/SeeMoreNav.astro';
-
-import violetWallpaper from '../images/VioletWallpaper.jpg';
+import { Image } from "astro:assets";
 
 const { frontmatter } = Astro.props;
 ---
@@ -19,14 +18,10 @@ const { frontmatter } = Astro.props;
             <div
                 class="my-4 h-auto w-full overflow-hidden rounded"
                 transition:animate="slide">
-                <img
+                <Image
                     class="max-h-none w-full"
-                    src={frontmatter.image.src != ''
-                        ? frontmatter.image.src
-                        : violetWallpaper.src}
-                    alt={frontmatter.image.alt != ''
-                        ? frontmatter.image.alt
-                        : 'Violet Evergarden'}
+                    src={frontmatter.image.src}
+                    alt={frontmatter.image.alt}
                 />
             </div>
             <div id="content" class="my-4" transition:animate="slide">

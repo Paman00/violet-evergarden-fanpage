@@ -1,9 +1,9 @@
 ---
-layout: ../../layouts/SeeMoreLayout.astro
 title: 'Ver Violet Evergarden'
 description: '¿Donde puedes ver Violet Evergarden?'
+label: 'Dónde ver'
 image:
-    src: '/VioletWallpaper4.jpg'
+    src: './cover/watch.jpg'
     alt: 'Violet Evergarden getting up and looking her hand'
 ---
 
