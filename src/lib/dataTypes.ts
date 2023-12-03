@@ -6,7 +6,7 @@ export interface Series {
     website: string;
 }
 
-enum Language {
+export enum Language {
     Japanese = 'japanese',
     English = 'english',
     // Agrega más idiomas si es necesario

@@ -1,3 +1,11 @@
+import type Data from './dataTypes';
+import type {
+    Character,
+    Series,
+    CastVoice,
+} from './dataTypes';
+import { Language } from './dataTypes';
+
 import violetImg from '../images/VioletCharacter.jpg';
 import claudiaImg from '../images/ClaudiaCharacter.jpg';
 import gilbertImg from '../images/GilbertCharacter.jpg';
@@ -6,7 +14,7 @@ import benedictImg from '../images/BenedictCharacter.jpg';
 import ericaImg from '../images/EricaCharacter.jpg';
 import irisImg from '../images/IrisCharacter.jpg';
 
-const data = {
+export const data: Data = {
     series: [
         {
             id: '1',
@@ -50,12 +58,12 @@ const data = {
             ],
             height: 168,
             cast: {
-                japanese: {
+                [Language.Japanese]: {
                     id: '1',
                     name: 'Yui Ishikawa',
                     link: 'https://www.behindthevoiceactors.com/Yui-Ishikawa/',
                 },
-                english: {
+                [Language.English]: {
                     id: '2',
                     name: 'Erika Harlacher',
                     link: 'https://www.behindthevoiceactors.com/Erika-Harlacher/',
@@ -75,12 +83,12 @@ const data = {
             ],
             height: 185,
             cast: {
-                japanese: {
+                [Language.Japanese]: {
                     id: '3',
                     name: 'Daisuke Namikawa',
                     link: 'https://www.behindthevoiceactors.com/Daisuke-Namikawa/',
                 },
-                english: {
+                [Language.English]: {
                     id: '4',
                     name: 'Tony Azzolino',
                     link: 'https://www.behindthevoiceactors.com/Tony-Azzolino/',
@@ -101,12 +109,12 @@ const data = {
             ],
             height: 192,
             cast: {
-                japanese: {
+                [Language.Japanese]: {
                     id: '5',
                     name: 'Takehito Koyasu',
                     link: 'https://www.behindthevoiceactors.com/Takehito-Koyasu/',
                 },
-                english: {
+                [Language.English]: {
                     id: '6',
                     name: 'Kyle McCarley',
                     link: 'https://www.behindthevoiceactors.com/Kyle-McCarley/',
@@ -126,12 +134,12 @@ const data = {
                 'Tiene una personalidad libre y generosa y, como empleada superior, organiza a Violet y a los demás empleados subalternos.',
             ],
             cast: {
-                japanese: {
+                [Language.Japanese]: {
                     id: '7',
                     name: 'Aya Endo',
                     link: 'https://www.behindthevoiceactors.com/Aya-Endo/',
                 },
-                english: {
+                [Language.English]: {
                     id: '8',
                     name: 'Reba Buhr',
                     link: 'https://www.behindthevoiceactors.com/Reba-Buhr/',
@@ -150,12 +158,12 @@ const data = {
                 'Es exigente con la ropa que usa, y viste ropa de civil en lugar del uniforme de repartidor.',
             ],
             cast: {
-                japanese: {
+                [Language.Japanese]: {
                     id: '9',
                     name: 'Koki Uchiyama',
                     link: 'https://www.behindthevoiceactors.com/Koki-Uchiyama/',
                 },
-                english: {
+                [Language.English]: {
                     id: '10',
                     name: 'Ben Pronsky',
                     link: 'https://www.behindthevoiceactors.com/Ben-Pronsky/',
@@ -174,12 +182,12 @@ const data = {
             ],
             height: 155,
             cast: {
-                japanese: {
+                [Language.Japanese]: {
                     id: '11',
                     name: 'Minori Chihara',
                     link: 'https://www.behindthevoiceactors.com/Minori-Chihara/',
                 },
-                english: {
+                [Language.English]: {
                     id: '12',
                     name: 'Christine Marie Cabanos',
                     link: 'https://www.behindthevoiceactors.com/Christine-Marie-Cabanos/',
@@ -199,13 +207,13 @@ const data = {
                 'Admira a las mujeres trabajadoras y está decidida a hacerse un nombre en el trabajo lo antes posible.',
             ],
             cast: {
-                japanese: {
+                [Language.Japanese]: {
                     id: '13',
                     name: 'Haruka Tomatsu',
                     link: 'https://www.behindthevoiceactors.com/Haruka-Tomatsu/',
                 },
 
-                english: {
+                [Language.English]: {
                     id: '14',
                     name: 'Cherami Leigh',
                     link: 'https://www.behindthevoiceactors.com/Cherami-Leigh/',
@@ -216,30 +224,33 @@ const data = {
     ],
 };
 
-export const series = data.series;
-export const characters = data.characters;
+export const series: Series[] = data.series;
+
+export const characters: Character[] = data.characters;
+
 export const castVoice = (() => {
-    const tempArray = [];
+    const tempArray: CastVoice[] = [];
     characters.forEach(character => {
-        Object.keys(character.cast).forEach(key => {
-            if (character.cast[key]) {
-                const tempObject = {
-                    ...character.cast[key],
-                    language: key,
+        for (const lang of Object.values(Language)) {
+            let tempObject: CastVoice;
+            if (character.cast.hasOwnProperty(lang)) {
+                tempObject = {
+                    ...character.cast[lang as Language],
+                    language: lang as Language,
                 };
-                tempArray.push(tempObject);
             } else {
-                const tempObject = {
+                tempObject = {
                     name: 'No registrado',
-                    language: key,
+                    language: lang as Language,
                 };
-                tempArray.push(tempObject);
             }
-        });
+            tempArray.push(tempObject);
+        }
     });
     return tempArray;
 })();
-export const languages = (() => {
+
+export const languages: Language[] = (() => {
     return Array.from(new Set(castVoice.map(cast => cast.language)));
 })();
 

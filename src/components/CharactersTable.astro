@@ -1,7 +1,9 @@
 ---
 import CharacterRow from './CharacterRow.astro';
 
-import { characters, series, languages } from '@/data/data.mjs';
+import { Language } from '@/lib/dataTypes';
+
+import { characters, series, languages } from '@/lib/data.js';
 
 const { ...rest } = Astro.props;
 
@@ -36,7 +38,7 @@ const { ...rest } = Astro.props;
                         languages.map(language => (
                             <th class="cell text-sm">
                                 {' '}
-                                {language == 'japanese' ? 'Japonés' : 'Inglés'}{' '}
+                                {language == Language.Japanese ? 'Japonés' : 'Inglés'}{' '}
                             </th>
                         ))
                     }
