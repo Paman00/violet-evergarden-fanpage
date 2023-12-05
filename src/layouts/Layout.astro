@@ -96,20 +96,21 @@ const { title, description } = Astro.props;
                 }
             });
         </script>
-    </body><style
-        define:vars={{
-            golden: colors.golden.DEFAULT,
-            lightGolden: colors.golden.light,
-            beige: colors.beige.DEFAULT,
-            lightBeige: colors.beige.light,
-        }}
-        is:global
-    >
-        :root {
-            --golden: var(--golden);
-            --lightGolden: var(--lightGolden);
-            --beige: var(--beige);
-            --lightBeige: var(--lightBeige);
-        }
-    </style>
+        <style
+            define:vars={{
+                golden: colors.golden.DEFAULT,
+                lightGolden: colors.golden.light,
+                beige: colors.beige.DEFAULT,
+                lightBeige: colors.beige.light,
+            }}
+            is:global
+        >
+            :root {
+                --golden: var(--golden);
+                --lightGolden: var(--lightGolden);
+                --beige: var(--beige);
+                --lightBeige: var(--lightBeige);
+            }
+        </style>
+    </body>
 </html>

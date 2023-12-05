@@ -6,18 +6,28 @@ import { Language } from '@/lib/dataTypes';
 import { characters, series, languages } from '@/lib/data.js';
 
 const { ...rest } = Astro.props;
-
 ---
 
-<div class="bg-white p-2 border-golden border w-min shadow-sm m-auto">
-    <div class="border-golden border p-1 text-base w-min">
+<div class="p- m-auto w-min border border-golden bg-white shadow-sm">
+    <div class="w-min border border-golden p-1 text-base">
         <table
-            class="m-auto border-collapse overflow-auto rounded-sm border-2 border-golden table-fixed" {...rest}>
+            class="m-auto table-fixed border-collapse overflow-auto rounded-sm border-2 border-golden"
+            {...rest}>
+            <caption
+                class="mb-1 border-2 border-golden p-2 text-center text-base">
+                Información acerca de los personajes de Violet Evergarden, sus
+                participaciones en cada una de las series y los actores de
+                doblaje que los interpretan en los formatos digitales (series y
+                películas).</caption
+            >
             <thead>
                 <tr class="row rowTitle">
                     <th class="cell" rowspan="2">Nombre</th>
                     <th class="cell" rowspan="2">Nombre en Japonés</th>
-                    <th class="cell cellLower" rowspan="1" colspan={series.length}>Presente en</th
+                    <th
+                        class="cell cellLower"
+                        rowspan="1"
+                        colspan={series.length}>Presente en</th
                     >
                     <th class="cell cellLower" rowspan="2">Altura</th>
                     <th class="cell" colspan={languages.length}>Doblaje</th>
@@ -38,7 +48,9 @@ const { ...rest } = Astro.props;
                         languages.map(language => (
                             <th class="cell text-sm">
                                 {' '}
-                                {language == Language.Japanese ? 'Japonés' : 'Inglés'}{' '}
+                                {language == Language.Japanese
+                                    ? 'Japonés'
+                                    : 'Inglés'}{' '}
                             </th>
                         ))
                     }
@@ -54,7 +66,9 @@ const { ...rest } = Astro.props;
                             casts={character.cast}
                             height={character.height}
                             serie={series.map(serie =>
-                                character.seriesId.includes(serie.id) ? '✓' : ' ',
+                                character.seriesId.includes(serie.id)
+                                    ? '✓'
+                                    : ' ',
                             )}
                         />
                     ))
@@ -66,7 +80,6 @@ const { ...rest } = Astro.props;
 
 <style is:global>
     .row {
-        height: 44px;
         max-height: 44px;
     }
     .row:nth-child(even) {
@@ -117,7 +130,7 @@ const { ...rest } = Astro.props;
         border-radius: 4px;
     }
 
-    .cell::-webkit-scrollbar-track:hover, 
+    .cell::-webkit-scrollbar-track:hover,
     .cell::-webkit-scrollbar-track:active {
         background: #d4d4d4;
     }
@@ -133,7 +146,7 @@ const { ...rest } = Astro.props;
         text-overflow: clip;
     }
     .cell:hover a,
-    .cell:scope a{
+    .cell:scope a {
         color: var(--golden);
     }
 </style>

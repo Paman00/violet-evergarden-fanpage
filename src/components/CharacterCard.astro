@@ -1,16 +1,17 @@
 ---
 export interface Props {
-    id: string;
     name: string;
     img: string;
     description: string[];
 }
 
-const { /*id,*/ name, img, description } = Astro.props;
+const { name, img, description } = Astro.props;
+const url = `/characters/${name.toLowerCase().replace(/ /g, '-')}/#navBar`;
 ---
 
-<div
-    class="group m-auto mb-8 mt-2 w-full max-w-sm overflow-hidden rounded-sm bg-white shadow last:mb-0 hover:cursor-pointer md:max-w-4xl">
+<a
+    class="group m-auto mb-8 mt-2 block w-full max-w-sm overflow-hidden rounded-sm bg-white shadow last:mb-0 hover:cursor-pointer md:max-w-4xl"
+    href={url}>
     <h3
         class="bg-golden-light py-1 text-center font-normal tracking-wide text-white">
         {name}
@@ -27,14 +28,18 @@ const { /*id,*/ name, img, description } = Astro.props;
 
         <div
             class="h-full pt-4 group-odd:float-right group-even:float-left md:w-1/2 md:pt-0 group-odd:md:pl-4 group-even:md:pr-4">
-            <p>
+            <p class="a md:relative md:top-1/2 md:-translate-y-1/2">
                 {
                     description.map(content => (
                         <font class="inline-block">{content}</font>
                     ))
                 }
+                <font
+                    class="relative block text-center text-golden opacity-0 duration-300 ease-in-out hover:underline hover:!opacity-100 group-hover:opacity-70"
+                    >Ver más</font
+                >
             </p>
         </div>
         <div class="clear-both"></div>
     </div>
-</div>
+</a>
