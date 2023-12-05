@@ -1,7 +1,12 @@
 ---
-const { ...rest } = Astro.props;
+const { class: className, ...rest } = Astro.props;
 ---
 
-<section class="w-full h-full px-5 py-8 md:px-10 md:py-16 after:clear-both after:table after:content-['']" {...rest}>
+<section
+    class:list={[
+        "h-full w-full px-5 py-8 after:clear-both after:table after:content-[''] md:px-10 md:py-16",
+        className,
+    ]}
+    {...rest}>
     <slot />
 </section>

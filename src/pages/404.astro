@@ -1,0 +1,21 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import Section from '@/components/Section.astro';
+---
+
+<Layout title="404: Not Found" description="Pagina no encontrada">
+    <Section class="flex h-full min-h-[90vh] flex-col justify-center">
+        <h1 class="text-center text-4xl font-bold text-gray-800">
+            404: Not Found
+        </h1>
+        <p class="text-center text-gray-600">Esta pagina no existe, ¿aún?</p>
+        <p class="text-center text-base text-golden-light">
+            <a href="/#navBar">Volver al inicio</a>
+        </p>
+    </Section>
+    <script>
+        window.onload = function () {
+            window.location.hash = 'navBar';
+        };
+    </script>
+</Layout>
