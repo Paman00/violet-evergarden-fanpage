@@ -30,28 +30,29 @@ const { name, japaneseName, height, description, img, cast } = character;
     <Section>
         <Title>Personajes</Title>
         <div
-            class="m-auto max-w-xl items-center rounded-md bg-white p-2 text-center shadow">
-            <div class="relative mb-28 h-44 w-full border border-golden p-2">
+            class="m-auto max-w-xl items-center rounded-md bg-white p-1 text-center text-lg shadow md:p-2 md:text-xl">
+            <div class="relative mb-24 h-44 w-full md:mb-28">
                 <div
-                    class="relative h-full w-full border border-golden bg-golden">
+                    class="relative h-full w-full border border-golden p-1 md:p-2">
+                    <div class="relative h-full w-full bg-golden"></div>
                 </div>
                 <div
-                    class="absolute left-1/2 top-[28.2%] m-auto h-[250px] w-[250px] -translate-x-1/2 rounded-full bg-white">
+                    class="absolute left-1/2 top-[28.4%] m-auto h-min w-10/12 -translate-x-1/2 rounded-full bg-white md:h-[250px] md:w-[250px]">
                     <div
-                        class="relative top-1/2 -z-10 h-[1px] border-b border-golden">
+                        class="relative top-1/2 -z-10 border-golden md:border-b">
                     </div>
                     <figure class="p-1">
                         <img
                             src={img}
                             alt={name}
-                            class="m-auto w-10/12 rounded-full shadow-lg sm:w-full"
+                            class="m-auto w-full rounded-full shadow-lg"
                         />
                     </figure>
                 </div>
             </div>
-            <div class="p-8 pt-4">
-                <h2 class="text-4xl">{name}</h2>
-                <p class="text-base">{japaneseName}</p>
+            <div class="p-4 pt-4 md:p-8">
+                <h2 class="text-3xl md:text-4xl">{name}</h2>
+                <p class="text-sm md:text-base">{japaneseName}</p>
 
                 <div class="mt-5 space-y-4">
                     <p class="text-golden">
@@ -75,22 +76,24 @@ const { name, japaneseName, height, description, img, cast } = character;
                         {height / 100}m
                     </p>
                     <div
-                        class="rounded bg-beige-light px-5 py-3 text-left shadow-sm">
+                        class="rounded bg-beige-light px-2 py-3 text-left shadow-sm md:px-5">
                         <h3
                             class="mb-2 border-b border-golden pb-1 text-gray-900">
                             Descripción:
                             <div class="mt-1 border-b-2 border-golden"></div>
                         </h3>
-                        <p class="text-left text-lg">{description.join(' ')}</p>
+                        <p class="text-left text-base md:text-lg">
+                            {description.join(' ')}
+                        </p>
                     </div>
                     {
                         series && series.length > 0 && (
-                            <div class="rounded px-5 py-3 text-left">
+                            <div class="rounded px-2 py-3 text-left md:px-5">
                                 <h3 class="mb-2 border-b border-golden pb-1 text-gray-900 ">
                                     Series de aparición
                                     <div class="mt-1 border-b-2 border-golden" />
                                 </h3>
-                                <div class="snap h-auto snap-x overflow-x-auto scroll-smooth scrollbar-golden">
+                                <div class="snap scrollbar-golden h-auto snap-x overflow-x-auto scroll-smooth">
                                     <div class="flex gap-4 p-2 pb-4">
                                         {series.map(serie => (
                                             <a
