@@ -6,13 +6,18 @@ import type {
 } from './dataTypes';
 import { Language } from './dataTypes';
 
-import violetImg from '../images/VioletCharacter.jpg';
-import claudiaImg from '../images/ClaudiaCharacter.jpg';
-import gilbertImg from '../images/GilbertCharacter.jpg';
-import cattleyaImg from '../images/CattleyaCharacter.jpg';
-import benedictImg from '../images/BenedictCharacter.jpg';
-import ericaImg from '../images/EricaCharacter.jpg';
-import irisImg from '../images/IrisCharacter.jpg';
+import violetImg from '@/images/VioletCharacter.jpg';
+import claudiaImg from '@/images/ClaudiaCharacter.jpg';
+import gilbertImg from '@/images/GilbertCharacter.jpg';
+import cattleyaImg from '@/images/CattleyaCharacter.jpg';
+import benedictImg from '@/images/BenedictCharacter.jpg';
+import ericaImg from '@/images/EricaCharacter.jpg';
+import irisImg from '@/images/IrisCharacter.jpg';
+
+import lightNovelImg from '@/images/violet-evergarden-volume1.jpg';
+import serieImg from '@/images/violet-evergarden-serie.jpg';
+import movieMemoriesImg from '@/images/violet-evergarden-movie-memories.jpg';
+import movieTheMovieImg from '@/images/violet-evergarden-themovie.jpg';
 
 export const data: Data = {
     series: [
@@ -22,6 +27,7 @@ export const data: Data = {
             type: 'Novelas ligeras',
             dateArrival: new Date(2015, 12, 25),
             website: 'https://www.kyotoanimation.co.jp/books/violet/',
+            imgPage: lightNovelImg.src
         },
         {
             id: '2',
@@ -29,6 +35,7 @@ export const data: Data = {
             type: 'Anime',
             dateArrival: new Date(2018, 1, 11),
             website: 'https://tv.violet-evergarden.jp/',
+            imgPage: serieImg.src
         },
         {
             id: '3',
@@ -36,6 +43,7 @@ export const data: Data = {
             type: 'Película',
             dateArrival: new Date(2019, 9, 6),
             website: 'https://violet-evergarden.jp/sidestory/',
+            imgPage: movieMemoriesImg.src
         },
         {
             id: '4',
@@ -43,6 +51,7 @@ export const data: Data = {
             type: 'Película',
             dateArrival: new Date(2020, 9, 18),
             website: 'https://violet-evergarden.jp/',
+            imgPage: movieTheMovieImg.src
         },
     ],
     characters: [
