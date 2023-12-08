@@ -6,10 +6,12 @@ export interface Props {
 }
 
 const { name, img, description } = Astro.props;
-const url = `/characters/${name.toLowerCase().replace(/ /g, '-')}/#navBar`;
+const nameid = name.toLowerCase().replace(/ /g, '-');
+const url = `/characters/${nameid}/#navBar`;
 ---
 
 <a
+    id={nameid}
     class="group m-auto mb-8 mt-2 block w-full max-w-sm overflow-hidden rounded-sm bg-white shadow last:mb-0 hover:cursor-pointer md:max-w-4xl"
     href={url}>
     <h3

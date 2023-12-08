@@ -4,6 +4,7 @@ export interface Series {
     type: string;
     dateArrival: Date;
     website: string;
+    imgPage: string;
 }
 
 export enum Language {
