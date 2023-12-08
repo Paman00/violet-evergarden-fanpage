@@ -92,7 +92,7 @@ const { ...rest } = Astro.props;
 
 <style is:global>
     .row {
-        height: ;
+        height: max-content;
     }
     .row:nth-child(even) {
         background-color: #f9f9f9;
@@ -121,7 +121,7 @@ const { ...rest } = Astro.props;
     }
 
     .cell::-webkit-scrollbar {
-        height: 5px;
+        height: 3px !important;
     }
 
     .cell:hover,

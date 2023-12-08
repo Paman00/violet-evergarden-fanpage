@@ -41,10 +41,6 @@ export default {
         function ({ addComponents, theme }) {
             addComponents({
                 '.scrollbar-golden': {
-                    '&*': {
-                        position: 'absolute',
-                        bottom: '0',
-                    },
                     '&::-webkit-scrollbar': {
                         height: '7px',
                     },
