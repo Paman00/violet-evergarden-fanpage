@@ -22,15 +22,15 @@ const url = `/characters/${name.toLowerCase().replace(/ /g, '-')}/#navBar`;
 ---
 
 <tr class:list={[className]}>
-    <td class="cell"><a href={url}>{name}</a></td>
-    <td class="cell text-sm"
+    <td class="cell hover:scrollbar-golden"><a href={url}>{name}</a></td>
+    <td class="cell hover:scrollbar-golden text-sm"
         ><a href={url}>{japaneseName}</a>
 
-        {serie?.map(s => <td class="cell cellLower">{s}</td>)}
-        <td class="cell cellLower">{height / 100}m</td>
+        {serie?.map(s => <td class="cell hover:scrollbar-golden cellLower">{s}</td>)}
+        <td class="cell hover:scrollbar-golden cellLower">{height / 100}m</td>
         {
             Object.values(casts).map(cast => (
-                <td class="cell text-sm">
+                <td class="cell hover:scrollbar-golden text-sm">
                     <a href={cast.link ? cast.link : '#'}>{cast?.name}</a>
                 </td>
             ))

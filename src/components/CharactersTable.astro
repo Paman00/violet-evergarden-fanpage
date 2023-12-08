@@ -8,7 +8,7 @@ import { characters, series, languages } from '@/lib/data.js';
 const { ...rest } = Astro.props;
 ---
 
-<div class="p- m-auto w-min border border-golden bg-white shadow-sm">
+<div class="m-auto w-min border border-golden bg-white shadow-sm">
     <div class="w-min border border-golden p-1 text-base">
         <table
             class="m-auto table-fixed border-collapse overflow-auto rounded-sm border-2 border-golden"
@@ -22,20 +22,32 @@ const { ...rest } = Astro.props;
             >
             <thead>
                 <tr class="row rowTitle">
-                    <th class="cell" rowspan="2">Nombre</th>
-                    <th class="cell" rowspan="2">Nombre en Japonés</th>
                     <th
-                        class="cell cellLower"
+                        class="cell hover:scrollbar-golden"
+                        rowspan="2">Nombre</th
+                    >
+                    <th
+                        class="cell hover:scrollbar-golden"
+                        rowspan="2">Nombre en Japonés</th
+                    >
+                    <th
+                        class="cell hover:scrollbar-golden cellLower"
                         rowspan="1"
                         colspan={series.length}>Presente en</th
                     >
-                    <th class="cell cellLower" rowspan="2">Altura</th>
-                    <th class="cell" colspan={languages.length}>Doblaje</th>
+                    <th
+                        class="cell hover:scrollbar-golden cellLower"
+                        rowspan="2">Altura</th
+                    >
+                    <th
+                        class="cell hover:scrollbar-golden"
+                        colspan={languages.length}>Doblaje</th
+                    >
                 </tr>
                 <tr class="row rowTitle">
                     {
                         series.map(serie => (
-                            <th class="cell cellLower text-sm">
+                            <th class="cell hover:scrollbar-golden cellLower text-sm">
                                 <a href={serie.website} target="_blank">
                                     {serie.name === 'Violet Evergarden'
                                         ? `${serie.name} (${serie.type})`
@@ -46,7 +58,7 @@ const { ...rest } = Astro.props;
                     }
                     {
                         languages.map(language => (
-                            <th class="cell text-sm">
+                            <th class="cell hover:scrollbar-golden text-sm">
                                 {' '}
                                 {language == Language.Japanese
                                     ? 'Japonés'
@@ -80,7 +92,7 @@ const { ...rest } = Astro.props;
 
 <style is:global>
     .row {
-        max-height: 44px;
+        height: ;
     }
     .row:nth-child(even) {
         background-color: #f9f9f9;
@@ -94,6 +106,7 @@ const { ...rest } = Astro.props;
         max-width: 160px;
         width: 160px;
         overflow: hidden;
+        transition: all 0.3s ease-in-out;
     }
     .cell * {
         transition: all 0.3s ease-in-out;
@@ -109,35 +122,6 @@ const { ...rest } = Astro.props;
 
     .cell::-webkit-scrollbar {
         height: 5px;
-    }
-
-    .cell::-webkit-scrollbar-thumb {
-        background: var(--lightGolden);
-        border-radius: 4px;
-    }
-
-    .cell::-webkit-scrollbar-thumb:active {
-        background-color: var(--golden);
-    }
-
-    .cell::-webkit-scrollbar-thumb:hover {
-        display: block;
-        background-color: var(--golden);
-    }
-
-    .cell::-webkit-scrollbar-track {
-        background: #e1e1e1;
-        border-radius: 4px;
-    }
-
-    .cell::-webkit-scrollbar-track:hover,
-    .cell::-webkit-scrollbar-track:active {
-        background: #d4d4d4;
-    }
-
-    .cell:hover .cell::-webkit-scrollbar-track,
-    .cell:scope .cell::-webkit-scrollbar-track {
-        display: block;
     }
 
     .cell:hover,

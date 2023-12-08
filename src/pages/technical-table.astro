@@ -10,53 +10,13 @@ import CharactersTable from '@/components/CharactersTable.astro';
     description="Descubre información detallada sobre los personajes de Violet Evergarden, incluyendo sus participaciones en la serie y los actores de doblaje que los interpretan.">
     <Section>
         <Title>Ficha Técnica</Title>
-        <div class="scrollbar max-w-[91,666%] overflow-auto p-1 pt-4">
+        <div class="scrollbar-golden max-w-[91,666%] overflow-auto p-1 pt-4">
             <CharactersTable />
         </div>
-        <div class="m-auto max-w-5xl">
-            <p class="m-auto text-right text-sm">
-                <a
-                    href="/see-more/sources/#navBar"
-                    class="duration-200 ease-in-out hover:text-golden"
-                    >Fuentes en Webs de Interés</a
-                >
-            </p>
-        </div>
+        <a
+            href="/see-more/sources/#navBar"
+            class="m-auto mt-4 block p-1 text-right text-base text-golden-light duration-200 hover:text-golden hover:underline md:w-max md:text-center">
+            Fuentes en Webs de Interés</a
+        >
     </Section>
 </Layout>
-
-<style>
-    .scrollbar::-webkit-scrollbar {
-        height: 7px;
-    }
-
-    .scrollbar::-webkit-scrollbar-thumb {
-        background: var(--lightGolden);
-        border-radius: 4px;
-    }
-
-    .scrollbar::-webkit-scrollbar-thumb:active {
-        background-color: var(--golden);
-    }
-
-    .scrollbar::-webkit-scrollbar-thumb:hover {
-        display: block;
-        background-color: var(--golden);
-        box-shadow: 0 0 2px 1px #00000033;
-    }
-
-    .scrollbar::-webkit-scrollbar-track {
-        background: #e1e1e1;
-        border-radius: 4px;
-    }
-
-    .scrollbar::-webkit-scrollbar-track:hover,
-    .scrollbar::-webkit-scrollbar-track:active {
-        background: #d4d4d4;
-    }
-
-    .scrollbar:hover .scrollbar::-webkit-scrollbar-track,
-    .scrollbar:scope .scrollbar::-webkit-scrollbar-track {
-        display: block;
-    }
-</style>
