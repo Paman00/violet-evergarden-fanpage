@@ -39,13 +39,13 @@ Para instalar el proyecto, sigue estos pasos:
 
 2. Navega al directorio del proyecto con el comando `cd violet-evergarden-fanpage`.
 
-3. Instala las dependencias utilizando el comando `yarn`.
+3. Instala las dependencias utilizando el comando `npm install`
 
 ¡Listo!
 
 ## Ejecución en Modo Desarrollo
 
-Para ejecutar el proyecto en modo desarrollo, utiliza el comando `yarn`. Esto iniciará un servidor de desarrollo en `http://localhost:4321` de forma predeterminada.
+Para ejecutar el proyecto en modo desarrollo, utiliza el comando `npm run dev`. Esto iniciará un servidor de desarrollo en `http://localhost:4321` de forma predeterminada.
 
 ## Acerca de Mí
 Descubre más sobre mí en la biografía de la página **about-me** de la aplicación. [Acerca de mí en Violet Evergarden](https://paman00violetfanpage.netlify.app/about-me/ "Violet Evergarden Fanpage - Paman00")
