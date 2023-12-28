@@ -23,7 +23,7 @@ export default {
                 beige: {
                     DEFAULT: '#efebd9',
                     gray: '#e1e1e1',
-                    light: '#f5f5dc'
+                    light: '#f5f5dc',
                 },
             },
             spacing: {
@@ -46,11 +46,10 @@ export default {
                     },
                     '&::-webkit-scrollbar-thumb': {
                         backgroundColor: theme('colors.golden.light'),
-                        borderRadius: '4px'
+                        borderRadius: '4px',
                     },
                     '&::-webkit-scrollbar-thumb:active': {
                         backgroundColor: theme('colors.golden.DEFAULT'),
-                    
                     },
                     '&::-webkit-scrollbar-thumb:hover': {
                         display: 'block',
@@ -78,9 +77,9 @@ export default {
                         '&::-webkit-scrollbar-track': {
                             display: 'block',
                         },
-                    }
+                    },
                 },
-            })
-        }
+            });
+        },
     ],
 };
